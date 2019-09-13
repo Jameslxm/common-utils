@@ -34,7 +34,7 @@ dependencies {
 }
 //添加
 publish {
-    artifactId = 'common-utils'//项目名称
+    artifactId = rootProject.uploadName//项目名称
     userOrg = rootProject.userOrg//bintray.com用户名
     groupId = rootProject.groupId//jcenter上的路径
     uploadName = rootProject.uploadName

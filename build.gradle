@@ -20,6 +20,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven{ url 'https://dl.bintray.com/jameslxm/maven'}//未审核通过可以使用这个
         
     }
     tasks.withType(Javadoc) {
@@ -36,7 +37,7 @@ task clean(type: Delete) {
 ext {
     userOrg = 'jameslxm'
     groupId = 'com.lxm'
-    uploadName = 'jameslxm'
+    uploadName = 'common-utils'//bintray中项目名称和github上的项目名称要一致
     publishVersion = '1.0.0'
     desc = 'Oh hi, this is a nice description for a project, right?'
     website = 'https://github.com/Jameslxm/common-utils'
