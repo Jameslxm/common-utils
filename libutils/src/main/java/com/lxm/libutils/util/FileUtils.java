@@ -1001,4 +1001,27 @@ public class FileUtils {
             e.printStackTrace();
         }
     }
+
+    /**
+     * 创建一个文件对象
+     * @param filePath
+     * @return
+     */
+    public static File createFile(String filePath){
+        try {
+            File file = new File(filePath);
+            if(!file.exists()){
+                File parentFile = file.getParentFile();
+                if(parentFile != null && !isFolderExist(parentFile.getAbsolutePath())){
+                    parentFile.mkdirs();
+                }
+                if(!isFileExist(filePath)){
+                    file.createNewFile();
+                }
+            }
+            return file;
+        }catch (Exception e){}
+
+        return null;
+    }
 }
